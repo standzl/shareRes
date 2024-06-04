@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>太空灯APP协议第四版</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+table {
+  border-collapse: collapse;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>太空灯APP协议</h1>
+<p><br/></p>
+<h2>设备端通用响应</h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">APP端发送的cmd指令</td>
+</tr>
+<tr>
+	<td align="center">result</td>
+	<td align="center">Integer</td>
+	<td align="center">0:成功 1:错误</td>
+</tr>
+</tbody>
+</table>
+<p>成功响应数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;timeClock&quot;,
+    &quot;result&quot;:0
+}
+</code></pre>
+
+<p>失败响应数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;timeClock&quot;,
+    &quot;result&quot;:1
+}
+</code></pre>
+
+<p><br/></p>
+<h2>APP端指令</h2>
+<h2><strong>1. 开关灯指令(控制所有灯：白灯，彩色光灯，激光灯)</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">lightOpen</td>
+</tr>
+<tr>
+	<td align="center">state</td>
+	<td align="center">Integer</td>
+	<td align="center">0:关 1:开</td>
+</tr>
+<tr>
+	<td align="center">light</td>
+	<td align="center">Integer</td>
+	<td align="center">1:白灯 2:彩光灯 3:激光灯</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例：</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;lightOpen&quot;,
+    &quot;state&quot;: 1,
+    &quot;light&quot;: 3
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>2.时钟指令</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">timeClock</td>
+</tr>
+<tr>
+	<td align="center">dayTime</td>
+	<td align="center">String</td>
+	<td align="center">eg: 2024/05/27 14:11:35</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例：</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;timeClock&quot;,
+    &quot;dayTime&quot;:&quot;2024/05/27 14:11:35&quot;
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”
+<br/></p>
+<h2><strong>3.设置白灯亮度</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setWLightBness</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">level</td>
+	<td align="center">Integer</td>
+	<td align="center">(0-100)</td>
+	<td align="center">白灯亮度</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setWLightBness&quot;,
+    &quot;level&quot;: 80
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>4.设置彩灯颜色</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setRGBLightColor</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">color</td>
+	<td align="center">String</td>
+	<td align="center">(（000000-FFFFFF）（RGB）)</td>
+	<td align="center">彩灯色值</td>
+</tr>
+<tr>
+	<td align="center">whiteOn</td>
+	<td align="center">Integer</td>
+	<td align="center">1:开启白光 0:关闭白光</td>
+	<td align="center">是否开启白光</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setRGBLightColor&quot;,
+    &quot;color&quot;: &quot;2af6cc&quot;,
+    &quot;whiteOn&quot;: 1
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>5.设置彩灯亮度</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setRGBBness</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">level</td>
+	<td align="center">Integer</td>
+	<td align="center">(0~100)</td>
+	<td align="center">彩灯亮度值</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setRGBBness&quot;,
+    &quot;level&quot;: 100
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>6.设置转盘速度</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">spinSpeed</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">speed</td>
+	<td align="center">Integer</td>
+	<td align="center">0:停止 1:慢速 2:中速 3:快速</td>
+	<td align="center">转盘速度，取值[0-3]</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;spinSpeed&quot;,
+    &quot;speed&quot;: 2
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>7.灯光呼吸开关</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">breathConfig</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">light</td>
+	<td align="center">Integer</td>
+	<td align="center">0</td>
+	<td align="center">0:白灯 1:彩光灯 2:激光</td>
+</tr>
+<tr>
+	<td align="center">breathEnable</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">是否启用呼吸效果 0:关闭 1:开启</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;breathConfig&quot;,
+    &quot;light&quot;: 0,
+    &quot;breathEnable&quot;:1
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>8.设置音乐播放/暂停 上一首 下一首</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">playControl</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">state</td>
+	<td align="center">Integer</td>
+	<td align="center">0:暂停 1:播放 2：上一首 3:下一首</td>
+	<td align="center">音乐操作</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;playControl&quot;,
+    &quot;state&quot;: 2
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>9.设置音乐灵敏度</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setMusicSens</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">level</td>
+	<td align="center">Integer</td>
+	<td align="center">80</td>
+	<td align="center">音乐灵敏度,取值[0-100]</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setMusicSens&quot;,
+    &quot;level&quot;: 60
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>10.设置音乐模式开关</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setMusicModeSwitch</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">modeOn</td>
+	<td align="center">Integer</td>
+	<td align="center">0:关闭 1:打开</td>
+	<td align="center">音乐模式开关</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setMusicModeSwitch&quot;,
+    &quot;modeOn&quot;: 1
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>11.设置音乐模式律动场景</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setMusicScene</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">scene</td>
+	<td align="center">Integer</td>
+	<td align="center">0：摇滚 1：爵士 2：经典 3：球赛 4：游戏</td>
+	<td align="center">音乐模式开关</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setMusicScene&quot;,
+    &quot;scene&quot;: 0
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>12.设置设备音量</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">deviceVolume</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">volume</td>
+	<td align="center">Integer</td>
+	<td align="center">80</td>
+	<td align="center">设备音量,取值[0-100]</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;deviceVolume&quot;,
+    &quot;scene&quot;: 70
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>13.设置总开关延时</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">switchDelay</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">state</td>
+	<td align="center">Integer</td>
+	<td align="center">0:总开关关闭 1：总开关开启</td>
+	<td align="center">总开关延时操作</td>
+</tr>
+<tr>
+	<td align="center">hour</td>
+	<td align="center">Integer</td>
+	<td align="center">15</td>
+	<td align="center">时,取值[0-24]</td>
+</tr>
+<tr>
+	<td align="center">minutes</td>
+	<td align="center">Integer</td>
+	<td align="center">32</td>
+	<td align="center">分,取值[0-59]</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;switchDelay&quot;,
+    &quot;state&quot;: 1,
+    &quot;hour&quot;: 0,
+    &quot;minutes&quot;:1
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>14.设置音乐播放源</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">musicSrc</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">source</td>
+	<td align="center">Integer</td>
+	<td align="center">0:APP音源 1：本地音乐</td>
+	<td align="center">播放源</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;musicSrc&quot;,
+    &quot;source&quot;: 1
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>15.设置机器运行状态</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setDevSwitchState</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">state</td>
+	<td align="center">Integer</td>
+	<td align="center">65</td>
+	<td align="center">机器开关状态 0:关闭(所有的停止运行)，1:开启（恢复停止之前的动作）</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setDevSwitchState&quot;,
+    &quot;state&quot;:1
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>16.推荐场景选择</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">suggestedScene</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">sceneCategory</td>
+	<td align="center">Integer</td>
+	<td align="center">3</td>
+	<td align="center">推荐场景 1:单双色动态2:单色静态3:动态场景4:假日陪伴5:主题成语 自定义场景:[6~10] 0:关闭场景显示</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;suggestedScene&quot;,
+    &quot;sceneCategory&quot;: 3
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>17.自定义场景设置</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">customeScene</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">name</td>
+	<td align="center">String</td>
+	<td align="center">myScene01</td>
+	<td align="center">自定义场景名称</td>
+</tr>
+<tr>
+	<td align="center">schedule</td>
+	<td align="center">Object</td>
+	<td align="center">参见说明</td>
+	<td align="center">包含灯光属性设置的调度信息</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;customeScene&quot;,
+    &quot;name&quot;:&quot;cmt1&quot;,
+    &quot;schedule&quot;:{
+        &quot;enable&quot;:true,
+        &quot;Interval&quot;:3000,
+        &quot;seqInterval&quot;:false,
+        &quot;loop&quot;:true,
+        &quot;isConcurrent&quot;:false
+        &quot;lightSpeed&quot;:55,
+        &quot;noise&quot;:[0,12,33]
+        &quot;sequence&quot;:[{
+            &quot;name&quot;:&quot;white&quot;,
+            &quot;colorNum&quot;:2,
+            &quot;colorValue&quot;: [&quot;cccccc&quot;, &quot;d5d4d4&quot;],
+            &quot;duration&quot;:2000,
+            &quot;lightChangeMode&quot;:1,
+            &quot;lightBness&quot;:65,
+            &quot;lightChangeSpeed&quot;:55,
+            &quot;open&quot;:true
+        },{
+            &quot;name&quot;:&quot;rgb&quot;,
+            &quot;colorNum&quot;:2,
+            &quot;colorValue&quot;:[&quot;cccccc&quot;, &quot;d5d4d4&quot;],
+            &quot;lightChangeMode&quot;:1,
+            &quot;duration&quot;:5000,
+            &quot;lightBness&quot;:78,
+            &quot;lightChangeSpeed&quot;:45,
+            &quot;open&quot;:true
+        },{
+            &quot;name&quot;:&quot;laser&quot;,
+            &quot;laserSat&quot;:80,
+            &quot;duration&quot;:1000,
+            &quot;laserBreathAnim&quot;:1,
+            &quot;open&quot;:false
+        }]
+    }
+}
+</code></pre>
+
+<p>schedule字段说明</p>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">enable</td>
+	<td align="center">boolean</td>
+	<td align="center">true:开启 false:关闭</td>
+	<td align="center">是否开启灯光调度,如果为true,则循环sequence数组</td>
+</tr>
+<tr>
+	<td align="center">Interval</td>
+	<td align="center">Long</td>
+	<td align="center"></td>
+	<td align="center">调度间隔,单位毫秒。表示每隔多少毫秒切换到sequence数组中的下一个</td>
+</tr>
+<tr>
+	<td align="center">seqInterval</td>
+	<td align="center">boolean</td>
+	<td align="center">false</td>
+	<td align="center">是否启用每个灯光的自定义间隔,如果启用,则忽略Interval属性,改为每个灯的duration</td>
+</tr>
+<tr>
+	<td align="center">loop</td>
+	<td align="center">boolean</td>
+	<td align="center">true:循环 false:一次性</td>
+	<td align="center">是否循环,如果为true,则会无限循环sequence数组中的灯设置</td>
+</tr>
+<tr>
+	<td align="center">isConcurrent</td>
+	<td align="center">boolean</td>
+	<td align="center">true:并行 false:时序循环</td>
+	<td align="center">是否并行,表示所有灯同时打开。如果是并行,则loop属性必须为false</td>
+</tr>
+<tr>
+	<td align="center">noise</td>
+	<td align="center">Int[]</td>
+	<td align="center">[0,3,1,2,9]</td>
+	<td align="center">白噪音编号数组,表示需要播放的音乐,白噪音序号为0~7</td>
+</tr>
+<tr>
+	<td align="center">sequence</td>
+	<td align="center">OjbectArray</td>
+	<td align="center">参见说明</td>
+	<td align="center">灯光循环时序,其中数组中的每个元素包含了各个灯光的属性设置,比如白光灯,彩灯,激光灯,不同灯光排列定义了不同的循环时序</td>
+</tr>
+</tbody>
+</table>
+<p>sequence字段说明</p>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">name</td>
+	<td align="center">String</td>
+	<td align="center">white</td>
+	<td align="center">灯光名称 white:白灯 rgb:彩灯 laser:激光灯</td>
+</tr>
+<tr>
+	<td align="center">colorNum</td>
+	<td align="center">Integer</td>
+	<td align="center">2</td>
+	<td align="center">颜色数量,必须和colorValue数组的长度保持一致</td>
+</tr>
+<tr>
+	<td align="center">colorValue</td>
+	<td align="center">String[]</td>
+	<td align="center"></td>
+	<td align="center">具体的颜色数组</td>
+</tr>
+<tr>
+	<td align="center">lightChangeMode</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">灯光切换模式 0:静态 1:跳变 2:呼吸</td>
+</tr>
+<tr>
+	<td align="center">lightBness</td>
+	<td align="center">Integer</td>
+	<td align="center">55</td>
+	<td align="center">灯光亮度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">duration</td>
+	<td align="center">Long</td>
+	<td align="center"></td>
+	<td align="center">灯光显示的持续时间,单位毫秒.受open和seqInterval的约束,如果seqInterval为true,则此字段忽略</td>
+</tr>
+<tr>
+	<td align="center">lightChangeSpeed</td>
+	<td align="center">Integer</td>
+	<td align="center">25</td>
+	<td align="center">灯光变换速度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">open</td>
+	<td align="center">boolean</td>
+	<td align="center">true</td>
+	<td align="center">灯光是否打开 true:打开 false:关闭</td>
+</tr>
+<tr>
+	<td align="center">laserSat</td>
+	<td align="center">Integer</td>
+	<td align="center"></td>
+	<td align="center">激光灯饱和度</td>
+</tr>
+<tr>
+	<td align="center">laserBreathAnim</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">激光灯呼吸动画 0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">lightSpeed</td>
+	<td align="center">Integer</td>
+	<td align="center">0</td>
+	<td align="center">彩灯/白灯 转盘速度,0:停止 1:慢速 2:中速 3:快速</td>
+</tr>
+</tbody>
+</table>
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>18.发送非场景模式下数据(水纹、激光、音乐)</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">setCustomModeData</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">deviceState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">机器开关状态 0:关闭(所有的停止运行) 1开启（恢复停止之前的动作）</td>
+</tr>
+<tr>
+	<td align="center">lightUIState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">白灯/彩灯界面开关状态 0:关闭（白灯/彩灯 关闭 转盘停止转动）1:开启 （恢复停止之前的动作）</td>
+</tr>
+<tr>
+	<td align="center">light</td>
+	<td align="center">Integer</td>
+	<td align="center">0</td>
+	<td align="center">控制的灯0:白灯,1：彩光灯,2激光灯</td>
+</tr>
+<tr>
+	<td align="center">lightState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">WLightBness</td>
+	<td align="center">Integer</td>
+	<td align="center">90</td>
+	<td align="center">白灯亮度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">rgbBness</td>
+	<td align="center">Integer</td>
+	<td align="center">55</td>
+	<td align="center">彩灯亮度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">laserBness</td>
+	<td align="center">Integer</td>
+	<td align="center">55</td>
+	<td align="center">激光灯亮度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">rgbLightColor</td>
+	<td align="center">String</td>
+	<td align="center">cccccc</td>
+	<td align="center">彩灯颜色 （000000-FFFFFF）（RGB）</td>
+</tr>
+<tr>
+	<td align="center">rgbSat</td>
+	<td align="center">Integer</td>
+	<td align="center">55</td>
+	<td align="center">彩灯饱和度 (0~100)</td>
+</tr>
+<tr>
+	<td align="center">breathAnimaOn</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">彩灯和白灯呼吸开关 0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">rotationSpeed</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">彩灯和白灯转盘速度 （0～3）0:停止 1:慢速 2:中速 3:快速</td>
+</tr>
+<tr>
+	<td align="center">musicModeOn</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐模式开关 0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">musicPlayState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐当前状态 0:暂停 1:播放 2:上一首 3:下一首</td>
+</tr>
+<tr>
+	<td align="center">musicSens</td>
+	<td align="center">Integer</td>
+	<td align="center">66</td>
+	<td align="center">音乐灵敏度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">musicStyle</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐模式律动场景 0:摇滚 1:爵士 2:经典 3:球赛 4:游戏</td>
+</tr>
+<tr>
+	<td align="center">deviceVolume</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">设备音量 0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">musicSource</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐模式 0:第三方音乐 1:本地音乐</td>
+</tr>
+<tr>
+	<td align="center">noiseNumber</td>
+	<td align="center">Integer</td>
+	<td align="center">5</td>
+	<td align="center">白噪音编号(0~7)</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;setCustomModeData&quot;,
+    &quot;deviceState&quot;:1,
+    &quot;lightUIState&quot;:1,
+    &quot;light&quot;:1,
+    &quot;lightState&quot;:1,
+    &quot;WLightBness&quot;:55,
+    &quot;rgbBness&quot;:55,
+    &quot;laserBness&quot;:66,
+    &quot;rgbLightColor&quot;:&quot;cccccc&quot;,
+    &quot;rgbSat&quot;:55,
+    &quot;breathAnimaOn&quot;:1,
+    &quot;rotationSpeed&quot;:1,
+    &quot;musicModeOn&quot;:1,
+    &quot;musicPlayState&quot;:1,
+    &quot;musicSens&quot;:34,
+    &quot;musicStyle&quot;:1,
+    &quot;deviceVolume&quot;:1,
+    &quot;musicSource&quot;:1,
+    &quot;noiseNumber&quot;:7
+}
+</code></pre>
+
+<p>设备端响应参见“通用设备响应”</p>
+<p><br/></p>
+<h2><strong>19.获取非场景模式下数据(水纹、激光、音乐)</strong></h2>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">getCustomModeData</td>
+	<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;getCustomModeData&quot;
+}
+</code></pre>
+
+<p>设备端响应</p>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值类型</th>
+	<th align="center">value</th>
+	<th align="center">属性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">cmd</td>
+	<td align="center">String</td>
+	<td align="center">getCustomModeData</td>
+	<td align="center"></td>
+</tr>
+<tr>
+	<td align="center">state</td>
+	<td align="center">String</td>
+	<td align="center">0</td>
+	<td align="center">状态 0:正常 1:定时编号(增替)</td>
+</tr>
+<tr>
+	<td align="center">delayHour</td>
+	<td align="center">Integer</td>
+	<td align="center">0</td>
+	<td align="center">延时时间 时(0~24)</td>
+</tr>
+<tr>
+	<td align="center">delayMins</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">延时时间 分(0~59)</td>
+</tr>
+<tr>
+	<td align="center">deviceState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">机器开关状态 0:关闭(所有的停止运行) 1开启（恢复停止之前的动作）</td>
+</tr>
+<tr>
+	<td align="center">lightUIState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">白灯/彩灯界面开关状态 0:关闭（白灯/彩灯 关闭 转盘停止转动）1:开启 （恢复停止之前的动作）</td>
+</tr>
+<tr>
+	<td align="center">light</td>
+	<td align="center">Integer</td>
+	<td align="center">0</td>
+	<td align="center">控制的灯0:白灯,1：彩光灯,2激光灯</td>
+</tr>
+<tr>
+	<td align="center">lightState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">WLightBness</td>
+	<td align="center">Integer</td>
+	<td align="center">90</td>
+	<td align="center">白灯亮度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">rgbBness</td>
+	<td align="center">Integer</td>
+	<td align="center">55</td>
+	<td align="center">彩灯亮度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">laserBness</td>
+	<td align="center">Integer</td>
+	<td align="center">55</td>
+	<td align="center">激光灯亮度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">rgbLightColor</td>
+	<td align="center">String</td>
+	<td align="center">cccccc</td>
+	<td align="center">彩灯颜色 （000000-FFFFFF）（RGB）</td>
+</tr>
+<tr>
+	<td align="center">rgbSat</td>
+	<td align="center">Integer</td>
+	<td align="center">55</td>
+	<td align="center">彩灯饱和度 (0~100)</td>
+</tr>
+<tr>
+	<td align="center">breathAnimaOn</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">彩灯和白灯呼吸开关 0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">rotationSpeed</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">彩灯和白灯转盘速度 （0～3）0:停止 1:慢速 2:中速 3:快速</td>
+</tr>
+<tr>
+	<td align="center">musicModeOn</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐模式开关 0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">musicPlayState</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐当前状态 0:暂停 1:播放 2:上一首 3:下一首</td>
+</tr>
+<tr>
+	<td align="center">musicSens</td>
+	<td align="center">Integer</td>
+	<td align="center">66</td>
+	<td align="center">音乐灵敏度(0~100)</td>
+</tr>
+<tr>
+	<td align="center">musicStyle</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐模式律动场景 0:摇滚 1:爵士 2:经典 3:球赛 4:游戏</td>
+</tr>
+<tr>
+	<td align="center">deviceVolume</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">设备音量 0:关闭 1:开启</td>
+</tr>
+<tr>
+	<td align="center">musicSource</td>
+	<td align="center">Integer</td>
+	<td align="center">1</td>
+	<td align="center">音乐模式 0:第三方音乐 1:本地音乐</td>
+</tr>
+<tr>
+	<td align="center">noiseNumber</td>
+	<td align="center">Integer</td>
+	<td align="center">5</td>
+	<td align="center">白噪音编号(0~7)</td>
+</tr>
+</tbody>
+</table>
+<p>数据示例:</p>
+<pre><code>{
+    &quot;cmd&quot;:&quot;getCustomModeData&quot;,
+    &quot;state&quot;:0,
+    &quot;delayHour&quot;:0,
+    &quot;delayMins&quot;:1,
+    &quot;deviceState&quot;:1,
+    &quot;lightUIState&quot;:1,
+    &quot;light&quot;:1,
+    &quot;lightState&quot;:1,
+    &quot;WLightBness&quot;:55,
+    &quot;rgbBness&quot;:55,
+    &quot;laserBness&quot;:66,
+    &quot;rgbLightColor&quot;:&quot;cccccc&quot;,
+    &quot;rgbSat&quot;:55,
+    &quot;breathAnimaOn&quot;:1,
+    &quot;rotationSpeed&quot;:1,
+    &quot;musicModeOn&quot;:1,
+    &quot;musicPlayState&quot;:1,
+    &quot;musicSens&quot;:34,
+    &quot;musicStyle&quot;:1,
+    &quot;deviceVolume&quot;:1,
+    &quot;musicSource&quot;:1,
+    &quot;noiseNumber&quot;:7
+}
+</code></pre>
+
+<p><br/></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
